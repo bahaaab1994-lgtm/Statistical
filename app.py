@@ -348,8 +348,9 @@ def main():
             - 🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Significant fluctuations in data; even small changes can significantly affect COV when overall cycle counts are low.
             """, unsafe_allow_html=True)
 
-            with st.markdown("###ℹ️ Definitions & Notes"):
-             st.markdown("""
+            st.markdown("###ℹ️ Definitions & Notes")
+             
+            st.markdown("""
             - **Each season** represents a winter period from **September to April**.
 
             - **Total Freeze–Thaw Cycles**: Includes all freezing events experienced by the concrete, regardless of moisture level.
