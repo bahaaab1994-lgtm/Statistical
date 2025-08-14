@@ -364,6 +364,12 @@ def main():
                 st.metric("COV", f"{stats['damaging_5yr_cov']:.1f}%")
                 st.markdown(f'<p class="consistent-text">{damaging_5yr_var_icon} <strong>{damaging_5yr_var_cat} Variability</strong></p>', unsafe_allow_html=True)
             
+            # Historical Data Table with only 3 columns
+            with st.expander("📋 Historical Data Summary (Last 5 Years)"):
+                table_data = stats['data'][['Season', 'Total Freeze-Thaw Cycles', 'Damaging Freeze-Thaw Cycles']].copy().head(5)
+                st.dataframe(table_data, use_container_width=True, hide_index=True)
+            
+            
             # All Historical Data Section
             st.markdown('<span class="analysis-badge historical-badge">2️⃣ All Historical Data (Up to 24 Years)</span>', unsafe_allow_html=True)
             historical_col1, historical_col2 = st.columns(2)
@@ -384,9 +390,9 @@ def main():
                 st.metric("COV", f"{stats['damaging_all_cov']:.1f}%")
                 st.markdown(f'<p class="consistent-text">{damaging_all_var_icon} <strong>{damaging_all_var_cat} Variability</strong></p>', unsafe_allow_html=True)
             
-            # Historical Data Table with only 3 columns
-            with st.expander("📋 Historical Data Summary (Last 5 Years)"):
-                table_data = stats['data'][['Season', 'Total Freeze-Thaw Cycles', 'Damaging Freeze-Thaw Cycles']].copy().head(5)
+            # ALL Years Data Table with only 3 columns
+            with st.expander("📋 Historical Data Summary (All Years)"):
+                table_data = stats['data'][['Season', 'Total Freeze-Thaw Cycles', 'Damaging Freeze-Thaw Cycles']].copy()
                 st.dataframe(table_data, use_container_width=True, hide_index=True)
 
 
