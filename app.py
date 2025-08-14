@@ -343,12 +343,12 @@ def main():
             st.markdown("""
             **COV measures the relative variability of freeze–thaw cycles:**
 
-            - 🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Low year-to-year variation, suggesting consistent freeze–thaw behavior at these sites. 
-            - 🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Noticeable annual changes in freeze–thaw cycles 
-            - 🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Significant fluctuations, due to their small number of changes in freeze–thaw cycles, which can disproportionately impact the CV despite a low standard deviation
+            - 🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Minimal year-to-year change; freeze–thaw behavior is stable.
+            - 🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Some year-to-year fluctuation in freeze–thaw cycles. 
+            - 🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Significant fluctuations in data; even small changes can significantly affect COV when overall cycle counts are low.
             """, unsafe_allow_html=True)
 
-            with st.expander("ℹ️ Definitions & Notes"):
+            with st.markdown("###ℹ️ Definitions & Notes"):
              st.markdown("""
             - **Each season** represents a winter period from **September to April**.
 
