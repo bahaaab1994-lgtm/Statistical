@@ -233,7 +233,7 @@ def main():
     
     # Add helpful note about coordinates
     st.info("💡 **Coordinate Tips:** For US locations, longitude values are negative (west of Greenwich). "
-            "For example: Denver, CO is at 39.84657, -104.65623")
+            "For example: Boulder, CO is at 40.015, -105.2705")
     
     col1, col2, col3 = st.columns(3)
     
