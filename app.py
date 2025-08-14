@@ -398,14 +398,15 @@ def main():
 
             
             # Coefficient of Variation Guide
-            st.markdown("### 📖 Notes and Definitions", unsafe_allow_html=True)
+            st.markdown("### 📖 Notes and Definitions")
 
             st.markdown("""
-<p><span style='font-size: 18px;'>🟢 <strong style='color:green;'>Low Variability (COV < 15%)</strong>: Minimal year-to-year change; freeze–thaw behavior is stable.</span></p>
-<p><span style='font-size: 18px;'>🟡 <strong style='color:orange;'>Moderate Variability (15% ≤ COV ≤ 40%)</strong>: Some year-to-year fluctuation in freeze–thaw cycles.</span></p>
-<p><span style='font-size: 18px;'>🔴 <strong style='color:red;'>High Variability (COV > 40%)</strong>: Large fluctuation in data; even small changes can significantly affect COV when overall cycle counts are low.</span></p>
-""", unsafe_allow_html=True)
+            - **Coefficient of Variation (COV) measures the relative variability of freeze–thaw cycles:**
 
+              🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Minimal year-to-year change; freeze–thaw behavior is stable.
+             🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Some year-to-year fluctuation in freeze–thaw cycles. 
+            🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Large fluctuation in data; even small changes can significantly affect COV when overall cycle counts are low.
+            """, unsafe_allow_html=True)
             
             
             st.markdown("""
