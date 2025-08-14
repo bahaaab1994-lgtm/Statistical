@@ -392,7 +392,7 @@ def main():
             st.dataframe(table_data, use_container_width=True, hide_index=True)
             
             # Coefficient of Variation Guide
-            st.markdown("### 📖 Coefficient of Variation (COV) Guide")
+            st.markdown("### 📖 Notes and Definitions")
 
             st.markdown("""
             **COV measures the relative variability of freeze–thaw cycles:**
@@ -402,8 +402,6 @@ def main():
             - 🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Highly variable  
             """, unsafe_allow_html=True)
             
-            # Notes and Definitions
-            st.markdown('<div class="section-header">📝 Notes and Definitions</div>', unsafe_allow_html=True)
             
             st.markdown("""
 - **Each season** represents a winter period from **September to April**.
