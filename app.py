@@ -388,7 +388,8 @@ def main():
             st.markdown('<div class="section-header">📋 Historical Data by Season</div>', unsafe_allow_html=True)
             
             # Display only the 3 requested columns
-            table_data = stats['data'][['Season', 'Total Freeze-Thaw Cycles', 'Damaging Freeze-Thaw Cycles']].copy()
+            table_data = stats['data'][['Season', 'Total Freeze-Thaw Cycles', 'Damaging Freeze-Thaw Cycles']].copy().head(5)
+
             st.dataframe(table_data, use_container_width=True, hide_index=True)
             
             # Coefficient of Variation Guide
@@ -397,9 +398,9 @@ def main():
             st.markdown("""
             - **COV measures the relative variability of freeze–thaw cycles:**
 
-                🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Consistent  
-                🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Some fluctuation  
-                🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Highly variable  
+                🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Minimal year-to-year change; freeze–thaw behavior is stable. 
+                🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Some year-to-year fluctuation in freeze–thaw cycles. 
+                🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Large fluctuation in data; even small changes can significantly affect COV when overall cycle counts are low.
             """, unsafe_allow_html=True)
             
             
