@@ -392,32 +392,28 @@ def main():
             st.dataframe(table_data, use_container_width=True, hide_index=True)
             
             # Coefficient of Variation Guide
-            st.markdown('<div class="section-header">📖 Coefficient of Variation (COV) Guide</div>', unsafe_allow_html=True)
-            
-            cov_col1, cov_col2, cov_col3 = st.columns(3)
-            
-            with cov_col1:
-                st.markdown('<p class="consistent-text">🟢 <strong>Low Variability:</strong> COV < 15%</p>', unsafe_allow_html=True)
-                st.markdown('<p class="consistent-text">Consistent freeze-thaw patterns with minimal year-to-year variation.</p>', unsafe_allow_html=True)
-            
-            with cov_col2:
-                st.markdown('<p class="consistent-text">🟡 <strong>Moderate Variability:</strong> COV 15-40%</p>', unsafe_allow_html=True)
-                st.markdown('<p class="consistent-text">Some variation in freeze-thaw cycles, typical for most regions.</p>', unsafe_allow_html=True)
-            
-            with cov_col3:
-                st.markdown('<p class="consistent-text">🔴 <strong>High Variability:</strong> COV > 40%</p>', unsafe_allow_html=True)
-                st.markdown('<p class="consistent-text">Significant year-to-year variation, indicating high climate variability.</p>', unsafe_allow_html=True)
+            st.markdown("### 📖 Coefficient of Variation (COV) Guide")
+
+            st.markdown("""
+            **COV measures the relative variability of freeze–thaw cycles:**
+
+            - 🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Consistent  
+            - 🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Some fluctuation  
+            - 🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Highly variable  
+            """, unsafe_allow_html=True)
             
             # Notes and Definitions
             st.markdown('<div class="section-header">📝 Notes and Definitions</div>', unsafe_allow_html=True)
             
-            st.markdown('<p class="consistent-text"><strong>Total Freeze-Thaw Cycles:</strong> The complete count of temperature transitions crossing the freezing point (32°F/0°C) during the winter season.</p>', unsafe_allow_html=True)
-            
-            st.markdown('<p class="consistent-text"><strong>Damaging Freeze-Thaw Cycles:</strong> Freeze-thaw cycles that occur when pavement temperatures are between 20°F and 32°F (-6.7°C to 0°C), which are most damaging to infrastructure.</p>', unsafe_allow_html=True)
-            
-            st.markdown('<p class="consistent-text"><strong>Coefficient of Variation (COV):</strong> A statistical measure of relative variability, calculated as (standard deviation / mean) × 100%. Lower values indicate more consistent patterns.</p>', unsafe_allow_html=True)
-            
-            st.markdown('<p class="consistent-text"><strong>Data Source:</strong> Historical freeze-thaw cycle data from monitoring stations across the United States, providing up to 24 years of seasonal data for infrastructure planning and maintenance decisions.</p>', unsafe_allow_html=True)
+            st.markdown("""
+- **Each season** represents a winter period from **September to April**.
+
+- **Total Freeze–Thaw Cycles**: Includes all freezing events experienced by the concrete, regardless of moisture level.
+
+- **Damaging Freeze–Thaw Cycles**: Only includes cycles when the Degree of Saturation (DOS) exceeded **80%**, which makes concrete vulnerable to freeze–thaw damage.
+
+> ⚠️ _Results are based on the **nearest available monitoring station** and may not reflect exact conditions at your specific location._
+""")
             
         except Exception as e:
             st.error(f"Error finding nearest location: {str(e)}")
