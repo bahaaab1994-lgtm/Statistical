@@ -390,12 +390,6 @@ def main():
                 st.dataframe(table_data, use_container_width=True, hide_index=True)
 
 
-            # Convert table to HTML with centered text
-            st.markdown(
-    table_data.to_html(index=False, escape=False, justify='center'),
-    unsafe_allow_html=True
-)
-
             
             # Coefficient of Variation Guide
             st.markdown("### 📖 Notes and Definitions")
