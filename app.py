@@ -329,26 +329,36 @@ def main():
             # Rename columns for better display
             display_stats = display_stats.rename(columns={
                 'Season': 'Season',
-                'Total_Cycles': 'Total Cycles',
-                'Damaging_Cycles': 'Damaging Cycles'
+                'Total_Cycles': 'Total Freeze-Thaw Cycles',
+                'Damaging_Cycles': 'Damaging Freeze-Thaw Cycles'
             })
             
-            st.dataframe(display_stats, use_container_width=True)
+            st.dataframe(display_stats.reset_index(drop=True), use_container_width=True)
+
             
             # COV Interpretation Guide
+            
             st.markdown("### 📖 Coefficient of Variation (COV) Guide")
+
             st.markdown("""
-            **COV measures the relative variability of freeze-thaw cycles:**
-            - 🟢 **Low Variability (COV < 15%)**: Consistent
-            - 🟡 **Moderate Variability (15% ≤ COV ≤ 40%)**: Some fluctuation 
-            - 🔴 **High Variability (COV > 40%)**: Highly variable
-            
-            - **Each season represents a winter period from September to April.**
-            - **Total Freeze-Thaw Cycles**: Represents all freezing events that the concrete experienced during the monitoring period, regardless of the moisture condition.
-            - **Damaging Freeze-Thaw Cycles**: Refers to the subset of freeze-thaw cycles during which the Degree of Saturation (DOS) exceeded the critical threshold of 80%, making the concrete susceptible to freeze-thaw damage.
-            
-            *Note: Results are based on the nearest available monitoring station and may not reflect exact conditions at your specific location.*
+            **COV measures the relative variability of freeze–thaw cycles:**
+
+            - 🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Consistent  
+            - 🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Some fluctuation  
+            - 🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Highly variable  
+            """, unsafe_allow_html=True)
+
+            with st.expander("ℹ️ Definitions & Notes"):
+             st.markdown("""
+            - **Each season** represents a winter period from **September to April**.
+
+            - **Total Freeze–Thaw Cycles**: Includes all freezing events experienced by the concrete, regardless of moisture level.
+
+            - **Damaging Freeze–Thaw Cycles**: Only includes cycles when the Degree of Saturation (DOS) exceeded **80%**, which makes concrete vulnerable to freeze–thaw damage.
+
+            > ⚠️ _Results are based on the **nearest available monitoring station** and may not reflect exact conditions at your specific location._
             """)
+
             
         except Exception as e:
             st.error(f"Error during analysis: {str(e)}")
