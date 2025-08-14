@@ -213,7 +213,7 @@ def get_variability_category(cov):
     else:
         return "High", "🔴"
 def main():
-    st.title("❄️ Freeze-Thaw Cycle Data Analysis")
+    st.title("❄️ Freeze-Thaw Cycle Data")
     st.markdown('<p class="consistent-text">Enter location coordinates to analyze freeze-thaw cycle data with 24-year and 5-year statistical summaries.</p>', unsafe_allow_html=True)
     
     # Get all available seasons
@@ -403,9 +403,9 @@ def main():
             st.markdown("""
             - **COV measures the relative variability of freeze–thaw cycles:**
 
-                🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Minimal year-to-year change; freeze–thaw behavior is stable. 
-                🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Some year-to-year fluctuation in freeze–thaw cycles. 
-                🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Large fluctuation in data; even small changes can significantly affect COV when overall cycle counts are low.
+               🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Minimal year-to-year change; freeze–thaw behavior is stable. 
+               🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Some year-to-year fluctuation in freeze–thaw cycles. 
+               🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Large fluctuation in data; even small changes can significantly affect COV when overall cycle counts are low.
             """, unsafe_allow_html=True)
             
             
