@@ -395,11 +395,11 @@ def main():
             st.markdown("### 📖 Notes and Definitions")
 
             st.markdown("""
-            **COV measures the relative variability of freeze–thaw cycles:**
+            - **COV measures the relative variability of freeze–thaw cycles:**
 
-              🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Consistent  
-              🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Some fluctuation  
-              🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Highly variable  
+                  🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Consistent  
+                  🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Some fluctuation  
+                  🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Highly variable  
             """, unsafe_allow_html=True)
             
             
