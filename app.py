@@ -333,9 +333,9 @@ def main():
                 'Damaging_Cycles': 'Damaging Freeze-Thaw Cycles'
             })
             
-            st.dataframe(display_stats.reset_index(drop=True), use_container_width=True)
+            st.dataframe(display_stats[['Season', 'Total Freeze-Thaw Cycles', 'Damaging Freeze-Thaw Cycles']].reset_index(drop=True), use_container_width=True)
 
-            
+
             # COV Interpretation Guide
             
             st.markdown("### 📖 Coefficient of Variation (COV) Guide")
@@ -343,9 +343,9 @@ def main():
             st.markdown("""
             **COV measures the relative variability of freeze–thaw cycles:**
 
-            - 🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Consistent  
-            - 🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Some fluctuation  
-            - 🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Highly variable  
+            - 🟢 <span style='color:green'><strong>Low Variability (COV < 15%)</strong></span>: Low year-to-year variation, suggesting consistent freeze–thaw behavior at these sites. 
+            - 🟡 <span style='color:orange'><strong>Moderate Variability (15% ≤ COV ≤ 40%)</strong></span>: Noticeable annual changes in freeze–thaw cycles 
+            - 🔴 <span style='color:red'><strong>High Variability (COV > 40%)</strong></span>: Significant fluctuations, due to their small number of changes in freeze–thaw cycles, which can disproportionately impact the CV despite a low standard deviation
             """, unsafe_allow_html=True)
 
             with st.expander("ℹ️ Definitions & Notes"):
