@@ -385,10 +385,10 @@ def main():
                 st.markdown(f'<p class="consistent-text">{damaging_all_var_icon} <strong>{damaging_all_var_cat} Variability</strong></p>', unsafe_allow_html=True)
             
             # Historical Data Table with only 3 columns
-            st.markdown('<div class="section-header">📋 Historical Data Summary (Last 5 Years)</div>', unsafe_allow_html=True)
-            
-            # Display only the 3 requested columns
-            table_data = stats['data'][['Season', 'Total Freeze-Thaw Cycles', 'Damaging Freeze-Thaw Cycles']].copy().head(5)
+            with st.expander("📋 Historical Data Summary (Last 5 Years)"):
+                table_data = stats['data'][['Season', 'Total Freeze-Thaw Cycles', 'Damaging Freeze-Thaw Cycles']].copy().head(5)
+                st.dataframe(table_data, use_container_width=True, hide_index=True)
+
 
             # Convert table to HTML with centered text
             st.markdown(
